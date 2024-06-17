@@ -31,6 +31,12 @@ Job job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"
             Assert.AreEqual("Quality control", job3.JobType.Value);
             Assert.AreEqual("Persistence", job3.JobCoreCompetency.Value);
         }
+
+        [TestMethod]
+        public void TestJobsForEquality()
+        {
+            Assert.IsFalse(job3.Equals(job4));
+        }
     }
 }
 
