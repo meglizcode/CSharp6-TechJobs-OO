@@ -19,6 +19,17 @@ Job job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"
         public void TestSettingJobId()
         {
             Assert.IsFalse(job1.Id == job2.Id); 
+            Assert.IsTrue(job1.Id+1 == job2.Id);
+        }
+
+        [TestMethod]
+        public void TestJobConstructorSetsAllFields()
+        {
+            Assert.AreEqual("Product tester", job3.Name);
+            Assert.AreEqual("ACME", job4.EmployerName.Value);
+            Assert.AreEqual("Desert", job3.EmployerLocation.Value);
+            Assert.AreEqual("Quality control", job3.JobType.Value);
+            Assert.AreEqual("Persistence", job3.JobCoreCompetency.Value);
         }
     }
 }
