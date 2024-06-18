@@ -39,7 +39,11 @@ namespace TechJobsOOAutoGraded6
         {
             return HashCode.Combine(Id);
         }
-            // TODO: Task 3: Generate Equals() and GetHashCode() methods.  
+        
+          public override string ToString()
+        {
+            return Environment.NewLine;
+        }
 
             // TODO: Task 5: Generate custom ToString() method.
             //     Until you create this method, you will not be able to print a job to the console.

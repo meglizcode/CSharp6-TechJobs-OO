@@ -37,6 +37,13 @@ Job job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"
         {
             Assert.IsFalse(job3.Equals(job4));
         }
+
+        [TestMethod]
+        public void TestToStringStartsAndEndsWithNewLine()
+        {
+           Assert.IsTrue(job3.ToString().StartsWith(Environment.NewLine));
+           Assert.IsTrue(job3.ToString().EndsWith(Environment.NewLine));
+        }
     }
 }
 
