@@ -50,7 +50,7 @@ Job job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"
             string newLine = Environment.NewLine;
             string jobTester = job3.ToString();
             string stringLabels = 
-            $"ID: {job3.Id}{newLine}" + 
+            $"{newLine}ID: {job3.Id}{newLine}" + 
             $"Name: {job3.Name}{newLine}" + 
             $"Employer: {job3.EmployerName}{newLine}" + 
             $"Location: {job3.EmployerLocation}{newLine}" + 
@@ -58,7 +58,12 @@ Job job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"
             $"Core Competency: {job3.JobCoreCompetency}{newLine}";
             Assert.AreEqual(jobTester, stringLabels);
         }
-        
+         [TestMethod]
+        public void TestToStringHandlesEmptyField()
+        {
+            string emptyFeildMessage = "Data not available";
+            Assert.IsTrue(job1.ToString().Contains(emptyFeildMessage));
+        }
      }
 }
 

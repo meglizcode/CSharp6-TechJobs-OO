@@ -44,14 +44,20 @@ namespace TechJobsOOAutoGraded6
         {
             // return Environment.NewLine;
             string newLine = Environment.NewLine;
+            
+            if(Name == null) {
+                Name = "Data not available";
+            }
+
             string jobLabels =  
-            $"ID: {Id}{newLine}" + 
+            $"{newLine}ID: {Id}{newLine}" + 
             $"Name: {Name}{newLine}" + 
             $"Employer: {EmployerName}{newLine}" + 
             $"Location: {EmployerLocation}{newLine}" + 
             $"Position Type: {JobType}{newLine}" + 
             $"Core Competency: {JobCoreCompetency}{newLine}";
-        return jobLabels;
+
+            return jobLabels;
         }
 
             // TODO: Task 5: Generate custom ToString() method.
