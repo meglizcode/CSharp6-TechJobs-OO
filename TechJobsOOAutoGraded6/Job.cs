@@ -44,18 +44,15 @@ namespace TechJobsOOAutoGraded6
         {
             // return Environment.NewLine;
             string newLine = Environment.NewLine;
-            
-            if(Name == null) {
-                Name = "Data not available";
-            }
+            string emptyFieldMessage = "Data not available";
 
-            string jobLabels =  
-            $"{newLine}ID: {Id}{newLine}" + 
-            $"Name: {Name}{newLine}" + 
-            $"Employer: {EmployerName}{newLine}" + 
-            $"Location: {EmployerLocation}{newLine}" + 
-            $"Position Type: {JobType}{newLine}" + 
-            $"Core Competency: {JobCoreCompetency}{newLine}";
+        string jobLabels =  
+        $"{newLine}ID: {Id}{newLine}" +
+        $"Name: {(string.IsNullOrEmpty(Name) ? emptyFieldMessage : Name)}{newLine}" +
+        $"Employer: {(EmployerName == null || string.IsNullOrEmpty(EmployerName.Value) ? emptyFieldMessage : EmployerName.Value)}{newLine}" +
+        $"Location: {(EmployerLocation == null || string.IsNullOrEmpty(EmployerLocation.Value) ? emptyFieldMessage : EmployerLocation.Value)}{newLine}" +
+        $"Position Type: {(JobType == null || string.IsNullOrEmpty(JobType.Value) ? emptyFieldMessage : JobType.Value)}{newLine}" +
+        $"Core Competency: {(JobCoreCompetency == null || string.IsNullOrEmpty(JobCoreCompetency.Value) ? emptyFieldMessage : JobCoreCompetency.Value)}{newLine}";
 
             return jobLabels;
         }
