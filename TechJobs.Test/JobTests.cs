@@ -44,6 +44,22 @@ Job job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"
            Assert.IsTrue(job3.ToString().StartsWith(Environment.NewLine));
            Assert.IsTrue(job3.ToString().EndsWith(Environment.NewLine));
         }
-    }
+         [TestMethod]
+        public void TestToStringContainsCorrectLabelsAndData()
+        {
+            string newLine = Environment.NewLine;
+            string jobTester = job3.ToString();
+            string stringLabels = 
+            $"ID: {job3.Id}{newLine}" + 
+            $"Name: {job3.Name}{newLine}" + 
+            $"Employer: {job3.EmployerName}{newLine}" + 
+            $"Location: {job3.EmployerLocation}{newLine}" + 
+            $"Position Type: {job3.JobType}{newLine}" + 
+            $"Core Competency: {job3.JobCoreCompetency}{newLine}";
+            Assert.AreEqual(jobTester, stringLabels);
+        }
+        
+     }
 }
+
 

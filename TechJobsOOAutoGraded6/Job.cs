@@ -42,14 +42,21 @@ namespace TechJobsOOAutoGraded6
         
           public override string ToString()
         {
-            return Environment.NewLine;
+            // return Environment.NewLine;
+            string newLine = Environment.NewLine;
+            string jobLabels =  
+            $"ID: {Id}{newLine}" + 
+            $"Name: {Name}{newLine}" + 
+            $"Employer: {EmployerName}{newLine}" + 
+            $"Location: {EmployerLocation}{newLine}" + 
+            $"Position Type: {JobType}{newLine}" + 
+            $"Core Competency: {JobCoreCompetency}{newLine}";
+        return jobLabels;
         }
 
             // TODO: Task 5: Generate custom ToString() method.
             //     Until you create this method, you will not be able to print a job to the console.
 
-
-        
     }
 }
 
