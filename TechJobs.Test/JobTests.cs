@@ -41,10 +41,10 @@ Job job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"
         [TestMethod]
         public void TestToStringStartsAndEndsWithNewLine()
         {
-           Assert.IsTrue(job3.ToString().StartsWith(Environment.NewLine));
-           Assert.IsTrue(job3.ToString().EndsWith(Environment.NewLine));
+        Assert.IsTrue(job3.ToString().StartsWith(Environment.NewLine));
+        Assert.IsTrue(job3.ToString().EndsWith(Environment.NewLine));
         }
-         [TestMethod]
+        [TestMethod]
         public void TestToStringContainsCorrectLabelsAndData()
         {
             string newLine = Environment.NewLine;
@@ -58,13 +58,13 @@ Job job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"
             $"Core Competency: {job3.JobCoreCompetency}{newLine}";
             Assert.AreEqual(jobTester, stringLabels);
         }
-         [TestMethod]
+        [TestMethod]
         public void TestToStringHandlesEmptyField()
         {
             string emptyFeildMessage = "Data not available";
             Assert.IsTrue(job1.ToString().Contains(emptyFeildMessage));
         }
-     }
+    }
 }
 
 
